@@ -10,18 +10,21 @@ const answer = await inquirer.prompt([
         choices: ["Addition", "Subtraction", "Multiplication", "Division"],
     },
 ]);
-if (answer.operator === "Addition") {
-    console.log("Your value is : ", answer.firstNumber + answer.secondNumber);
-}
-else if (answer.operator === "Subtraction") {
-    console.log("Your value is : ", answer.firstNumber - answer.secondNumber);
-}
-else if (answer.operator === "Multiplication") {
-    console.log("Your value is : ", answer.firstNumber * answer.secondNumber);
-}
-else if (answer.operator === "Division") {
-    console.log("Your value is : ", answer.firstNumber / answer.secondNumber);
+if (answer.firstNumber == "Nan" &&
+    answer.secondNumber == "Nan") {
+    if (answer.operator === "Addition") {
+        console.log("Your value is : ", answer.firstNumber + answer.secondNumber);
+    }
+    else if (answer.operator === "Subtraction") {
+        console.log("Your value is : ", answer.firstNumber - answer.secondNumber);
+    }
+    else if (answer.operator === "Multiplication") {
+        console.log("Your value is : ", answer.firstNumber * answer.secondNumber);
+    }
+    else if (answer.operator === "Division") {
+        console.log("Your value is : ", answer.firstNumber / answer.secondNumber);
+    }
 }
 else {
-    console.log("Ivalid input");
+    console.log("invalid input");
 }
