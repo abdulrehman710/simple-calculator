@@ -10,8 +10,10 @@ const answer = await inquirer.prompt([
         choices: ["Addition", "Subtraction", "Multiplication", "Division"],
     },
 ]);
-if (answer.firstNumber == "Nan" &&
-    answer.secondNumber == "Nan") {
+if (Number.isNaN(answer.firstNumber) || Number.isNaN(answer.secondNumber)) {
+    console.log("Invalid input");
+}
+else {
     if (answer.operator === "Addition") {
         console.log("Your value is : ", answer.firstNumber + answer.secondNumber);
     }
@@ -24,7 +26,4 @@ if (answer.firstNumber == "Nan" &&
     else if (answer.operator === "Division") {
         console.log("Your value is : ", answer.firstNumber / answer.secondNumber);
     }
-}
-else {
-    console.log("invalid input");
 }
